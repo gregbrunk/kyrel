@@ -12,12 +12,65 @@ function main(n) {
 
 ——
 
-
 var initial_state = ['b', 'b', 'b', 'b', 'b'];
 
 function main(n) {
   moveRight();
   moveRight();
   erase();
+
+}
+
+
+Day 2 Answers:
+
+var initial_state = ['b', 'b', 'b', 'b', 'b'];
+
+function main(n) {
+  moveRight();
+  erase();
+  moveRight();
+  moveRight();
+  erase();
+
+}
+___
+
+var initial_state = ['g', 'g', 'g', '.', '.'];
+
+function main(n) {
+  moveRight();
+  useBlue();
+  draw();
+  moveRight();
+  moveRight();
+  useBlue();
+  draw();
+
+}
+
+___
+
+var initial_state = [‘g’, '.', '.', '.', '.'];
+
+function main(n) {
+  if (onBlue()) {
+      erase();
+      moveRight();
+      moveRight();
+      moveRight();
+      moveRight();
+      useBlue();
+      draw();
+  } else if (onGreen()) {
+      erase();
+      moveRight();
+      moveRight();
+      moveRight();
+      moveRight();
+      useGreen();
+      draw();
+  } else {
+  }
 
 }
