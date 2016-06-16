@@ -1,4 +1,4 @@
-Day 1 Answers:
+DAY 1 ANSWERS:
 
 var initial_state = [ '.', '.', '.', '.', '.' ];
 
@@ -22,7 +22,7 @@ function main(n) {
 }
 
 
-Day 2 Answers:
+DAY 2 ANSWERS:
 
 var initial_state = ['b', 'b', 'b', 'b', 'b'];
 
@@ -72,5 +72,88 @@ function main(n) {
       draw();
   } else {
   }
-
 }
+
+DAY 3 ANSWERS:
+1. all_blue
+
+var initial_state = ['.', '.', '.', '.', '.'];
+
+function main(n) {
+ for (n=0; n < initial_state.length; n++) {
+    useBlue();
+    draw();
+    moveRight();
+ }
+}
+
+2. all_first_color
+
+var initial_state = ['g', '.', '.', '.', '.'];
+
+function main(n) {
+  if (onBlue()) {
+    useBlue();
+  } else if (onGreen()) {
+    useGreen();
+  }
+  for (var i=0; i < initial_state.length; i++) {
+    draw();
+    moveRight();
+  }
+}
+
+3. n_in_a_row
+
+var initial_state = ['.', '.', '.', '.', '.'];
+
+function main(n) {
+  var n = 5;
+  useBlue();
+  
+  for (i=0; i < n; i++){
+    draw();
+    moveRight();
+  }
+}
+
+4. every_even_erase
+
+var initial_state = ['b','b','b','b','b',];
+
+function main(n) {
+  for (i=0; i < 5; i+=1){
+    erase();
+    moveRight();
+    moveRight();
+  }
+}
+
+5. every_odd_erase //I intentionally did these two differently
+
+var initial_state = ['b','b','b','b','b',];
+
+function main(n) {
+  for (i=0; i < 5; i++){
+    if (i%2 !== 0){
+      erase();
+    }
+  moveRight();
+  }
+}
+
+6. every_n_erase
+
+var initial_state = ['b', 'b', 'b', 'b', 'b'];
+
+function main(n) {
+  var n = 3;
+  for (i=0; i < 5; i++){
+    if ((i+1)%n === 0){
+      erase();
+    }
+    moveRight();
+  }
+}
+
+
