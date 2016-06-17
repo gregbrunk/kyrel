@@ -19,22 +19,25 @@ var row, colors, kyrel, return_value, rando;
     'g' => green
 */
 
-var initial_state = ['b', 'b', 'b', 'b', 'b'];
+var initial_state = ['b', '.', 'g', '.', '.'];
 
 function main(n) {
-  var n = 3;
-  for (i=0; i < 5; i++){
-    if ((i+1)%n === 0){
+  var reverseOrder = initial_state.reverse();
+
+  for(var i=0; i<5; i++) {
+    if (reverseOrder[i]==='b'){
+      useBlue();
+      draw();
+    } else if (reverseOrder[i]==='g'){
+      useGreen();
+      draw();
+    }else {
       erase();
     }
     moveRight();
-  }
+  } 
 }
-
-
-
-
-//////////////////////////////
+///////////////////////////
 //
 // BEWARE, INNER WORKINGS BELOW
 // Feel free to read around, but just don't break anything :)

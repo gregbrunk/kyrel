@@ -156,4 +156,56 @@ function main(n) {
   }
 }
 
+DAY 4 ANSWERS:
+1. bleed_right
 
+var initial_state = ['.', '.', 'b', '.', '.'];
+
+for(var i=0; i<5; i++) {
+  if (onBlue()) {
+    useBlue();
+  } else if (onGreen()) {
+    useGreen();
+  } else {
+    draw();
+  }
+  moveRight();
+}
+
+2. invert_colors
+
+var initial_state = ['.', 'g', '.', '.', 'b'];
+
+function main(n) {
+  for (var i = 0; i < 5; i++) {
+    if (onBlue()){
+      useGreen();
+      draw();
+    } else if (onGreen()){
+      useBlue();
+      draw();
+    }
+    moveRight();
+  }
+}
+
+3. reverse_row
+
+var initial_state = ['b', '.', 'g', '.', '.'];
+
+function main(n) {
+  var reverseOrder = initial_state.reverse();
+
+  for(var i=0; i<5; i++) {
+    if (reverseOrder[i]==='b'){
+      useBlue();
+      draw();
+    } else if (reverseOrder[i]==='g'){
+      useGreen();
+      draw();
+    }else {
+      erase();
+    }
+    moveRight();
+  } 
+}
