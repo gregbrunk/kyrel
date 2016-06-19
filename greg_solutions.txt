@@ -210,3 +210,81 @@ function main(n) {
   } 
 }
 //!!! recommitting and pushing because commit message was wrong - this answers sheet is up to date through DAY 4 (THURSDAY), not just Day 3.
+
+
+DAY 5 ANSWERS:
+1. move_the_blue_dot_one_to_the_right
+
+var initial_state = ['g', 'g', 'b', '.', 'g'];
+
+function main(n) {
+  for (i=0; i < initial_state.length; i++) {
+    if (onBlue()) {
+        erase();
+        moveRight();
+        useBlue();
+        draw();
+        break;
+    } else {
+      moveRight();
+    }
+  }
+}
+
+2. delete_before (this only works if the last is blue)
+
+var initial_state = ['g', 'b', 'b', '.', '.'];
+
+function main(n) {
+  for (var i=0; i < initial_state.length; i++) {
+    if (onBlue()) {
+      moveLeft();
+      erase();
+      moveRight();
+    } 
+    moveRight();
+  }
+}
+
+3. pull_blues_right
+
+var initial_state = ['b', '.', 'b', '.', '.'];
+
+function main(n) {
+  var numberOfBlues = 0;
+  for (var i=0; i < initial_state.length; i++) {
+    if (onBlue()) {
+      numberOfBlues += 1;
+    } 
+    erase();
+    moveRight();
+  }
+  useBlue();
+  
+  while (numberOfBlues--) {
+    draw();
+    moveLeft();
+  }
+}
+
+4. pull_blues_right
+
+var initial_state = ['b', 'b', 'b', '.', 'b'];
+
+function main(n) {
+  var numberOfBlues = 0;
+  
+  for (var i=0; i < initial_state.length; i++) {
+    if (onBlue()) {
+      numberOfBlues += 1;
+    } 
+    useBlue();
+    draw();
+    moveRight();
+  }
+  
+  for (i=0; i < (5-numberOfBlues); i++) {
+    erase();
+    moveLeft();
+  }
+}
